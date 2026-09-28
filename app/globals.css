@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #f3efe7;
+  --color-paper-deep: #e6dfd3;
+  --color-cream: #fbfaf6;
+  --color-ink: #1c1915;
+  --color-ink-soft: #4e483f;
+  --color-muted: #8a8175;
+  --color-line: #ddd4c6;
+  --color-moss: #3f4f3a;
+  --color-moss-deep: #2c3828;
+  --color-clay: #a56b4a;
+  --color-sand: #efe6d6;
+  --font-sans: var(--font-app-sans), "PingFang TC", "Noto Sans CJK TC", "Microsoft JhengHei", sans-serif;
+  --font-serif: var(--font-app-serif), "Iowan Old Style", "PMingLiU", "Songti TC", serif;
+}
+
+:root {
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  margin: 0;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  text-rendering: optimizeLegibility;
+}
+
+body,
+#main {
+  min-width: 0;
+}
+
+::selection {
+  background: #e4d3bc;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-moss);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@keyframes scene-rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scene-bloom {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.72);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.scene-bloom {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+@media (prefers-reduced-motion: no-preference) and (min-width: 768px) {
+  html:not(.scene-static) .scene-rise {
+    animation: scene-rise 1.15s cubic-bezier(0.16, 0.84, 0.32, 1) both;
+  }
+
+  html:not(.scene-static) .scene-bloom {
+    animation: scene-bloom 0.95s cubic-bezier(0.16, 0.84, 0.32, 1) both;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scene-rise,
+  .scene-bloom {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
