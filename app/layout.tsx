@@ -1,4 +1,5 @@
 import { SiteFooter } from "@/components/layout/site-footer";
+import { SiteMotion } from "@/components/layout/site-motion";
 import { SiteHeader } from "@/components/layout/site-header";
 import { StoreHydration } from "@/components/providers/store-hydration";
 import { site } from "@/data/site";
@@ -40,6 +41,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           {children}
         </main>
         <SiteFooter />
+        <SiteMotion />
       </body>
     </html>
   );

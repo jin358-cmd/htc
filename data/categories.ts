@@ -40,6 +40,11 @@ export const catalogCategories: CategoryNode[] = [
 
 export const brands: Brand[] = [
   {
+    slug: "ozoo-home",
+    name: "OZOO HOME",
+    description: "生活雜貨與居家日用品，為日常生活提供實用選擇。",
+  },
+  {
     slug: "hongtai-select",
     name: "弘泰選品",
     description: "弘泰科技整理的生活選品，涵蓋紙品、香氛與日常補充。",
