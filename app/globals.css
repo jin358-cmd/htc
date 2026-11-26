@@ -12,8 +12,8 @@
   --color-moss-deep: #2c3828;
   --color-clay: #a56b4a;
   --color-sand: #efe6d6;
-  --font-sans: var(--font-app-sans), "PingFang TC", "Noto Sans CJK TC", "Microsoft JhengHei", sans-serif;
-  --font-serif: var(--font-app-serif), "Iowan Old Style", "PMingLiU", "Songti TC", serif;
+  --font-sans: "Noto Sans TC", "PingFang TC", "Noto Sans CJK TC", "Microsoft JhengHei", sans-serif;
+  --font-serif: "Noto Serif TC", "Iowan Old Style", "PMingLiU", "Songti TC", serif;
 }
 
 :root {
