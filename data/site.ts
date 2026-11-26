@@ -14,6 +14,7 @@ export const mainNav = [
   { href: "/categories/curated", label: "居家生活" },
   { href: "/brands", label: "品牌專區" },
   { href: "/services", label: "空間服務" },
+  { href: "/digital-services", label: "數位服務" },
   { href: "/news", label: "最新消息" },
   { href: "/about", label: "關於弘泰" },
 ] as const;
@@ -23,6 +24,7 @@ export const footerExplore = [
   { href: "/products", label: "商品" },
   { href: "/brands", label: "品牌專區" },
   { href: "/services", label: "空間服務" },
+  { href: "/digital-services", label: "數位服務" },
   { href: "/news", label: "最新消息" },
   { href: "/contact", label: "聯絡我們" },
 ] as const;
