@@ -72,7 +72,7 @@ export function HomeView() {
               <ButtonLink href="/services" variant="secondary">
                 空間服務
               </ButtonLink>
-              <ButtonLink href="#digital-services" variant="secondary">
+              <ButtonLink href="/digital-services" variant="secondary">
                 數位產品與服務
               </ButtonLink>
             </div>
@@ -134,7 +134,10 @@ export function HomeView() {
 
       <section id="digital-services" aria-labelledby="digital-services-title" className="scroll-mt-24 bg-cream py-16 lg:py-24">
         <Container>
-          <h2 id="digital-services-title" className="font-serif text-4xl leading-tight">數位產品與服務</h2>
+          <div className="flex flex-wrap items-center justify-between gap-4">
+            <h2 id="digital-services-title" className="font-serif text-4xl leading-tight">數位產品與服務</h2>
+            <ButtonLink href="/digital-services" variant="secondary">查看完整導覽</ButtonLink>
+          </div>
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {digitalServices.map(({ title, description, href }) => (
               <article key={title} className="flex flex-col border border-line bg-sand p-6">
