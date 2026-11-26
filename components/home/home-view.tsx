@@ -16,6 +16,39 @@ const featuredCategories = [
   { slug: "services", name: "空間服務", description: "設計、裝修、工程與一次把需求說清楚的諮詢。", href: "/services" },
 ];
 
+const digitalServices = [
+  {
+    title: "PMOS AI 生活語音助理",
+    description: "用語音或文字交辦任務、查看進度與驗收結果。",
+    href: "https://pmos.space",
+  },
+  {
+    title: "巢栖飯堂｜AI 語音點餐系統",
+    description: "用語音選餐，支援線上訂購、門店自取與外送。",
+    href: "https://chaoxi.pmos.space",
+  },
+  {
+    title: "AI 語音即時災害通報平台",
+    description: "掌握天氣資訊與災害通報。",
+    href: "https://weather.pmos.space",
+  },
+  {
+    title: "阿昌志工地圖",
+    description: "查找志工服務站點、車次與路線。",
+    href: "https://achange.pmos.space",
+  },
+  {
+    title: "AI 智駕地圖",
+    description: "在地圖上查看行車路線與沿途資訊。",
+    href: null,
+  },
+  {
+    title: "蝦皮客服 AI 語音助理 Widget",
+    description: "用語音整理買家詢問，產生可編輯的客服回覆。",
+    href: null,
+  },
+];
+
 export function HomeView() {
   const selected = filterProducts({ featured: true }).slice(0, 4);
   const arrivals = filterProducts({ tag: "new" }).slice(0, 4);
@@ -38,6 +71,9 @@ export function HomeView() {
               <ButtonLink href="/products">探索商品</ButtonLink>
               <ButtonLink href="/services" variant="secondary">
                 空間服務
+              </ButtonLink>
+              <ButtonLink href="#digital-services" variant="secondary">
+                數位產品與服務
               </ButtonLink>
             </div>
           </div>
@@ -91,6 +127,25 @@ export function HomeView() {
           <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
             {arrivals.map((product) => (
               <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <section id="digital-services" aria-labelledby="digital-services-title" className="scroll-mt-24 bg-cream py-16 lg:py-24">
+        <Container>
+          <h2 id="digital-services-title" className="font-serif text-4xl leading-tight">數位產品與服務</h2>
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {digitalServices.map(({ title, description, href }) => (
+              <article key={title} className="flex flex-col border border-line bg-sand p-6">
+                <h3 className="font-serif text-2xl">{title}</h3>
+                <p className="mt-3 flex-1 text-sm leading-relaxed text-ink-soft">{description}</p>
+                {href && (
+                  <a href={href} className="mt-5 self-start text-sm text-moss underline underline-offset-4">
+                    {new URL(href).hostname}
+                  </a>
+                )}
+              </article>
             ))}
           </div>
         </Container>
